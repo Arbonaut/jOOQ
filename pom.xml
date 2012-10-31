@@ -1,239 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <artifactId>oss-parent</artifactId>
-        <groupId>org.sonatype.oss</groupId>
-        <version>7</version>
-    </parent>
+	<parent>
+		<groupId>org.jooq</groupId>
+		<artifactId>jooq-parent</artifactId>
+		<version>2.6.0-SNAPSHOT</version>
+	</parent>
 
     <groupId>org.jooq</groupId>
-    <artifactId>jooq-parent</artifactId>
-    <version>2.6.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-
-    <name>jOOQ Parent</name>
-
-    <description>
-        jOOQ effectively combines complex SQL, typesafety, source code generation, active records,
-        stored procedures, advanced data types, and Java in a fluent, intuitive DSL.
-    </description>
-
-    <url>http://www.jooq.org</url>
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.jooq.org/inc/LICENSE.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <scm>
-        <developerConnection>scm:svn:https://jooq.svn.sourceforge.net/svnroot/jooq</developerConnection>
-        <url>https://jooq.svn.sourceforge.net/svnroot/jooq</url>
-        <connection>scm:svn:https://jooq.svn.sourceforge.net/svnroot/jooq</connection>
-    </scm>
-
-    <issueManagement>
-        <system>Trac</system>
-        <url>https://sourceforge.net/apps/trac/jooq/report/6</url>
-    </issueManagement>
-
-    <developers>
-        <developer>
-            <name>Lukas Eder</name>
-            <email>lukas.eder@gmail.com</email>
-            <roles>
-                <role>architect</role>
-                <role>developer</role>
-            </roles>
-        </developer>
-        <developer>
-            <name>Espen Stromsnes</name>
-            <email>estromsnes@gmail.com</email>
-            <roles>
-                <role>developer</role>
-            </roles>
-        </developer>
-        <developer>
-            <name>Christopher Deckers</name>
-            <email>chrriis@gmail.com</email>
-            <roles>
-                <role>developer</role>
-            </roles>
-        </developer>
-    </developers>
-
-    <contributors>
-        <contributor>
-            <name>Aaron Digulla</name>
-            <email>digulla@hepe.com</email>
-            <roles>
-                <role>codegen-support</role>
-            </roles>
-        </contributor>
-        <contributor>
-        	<name>Ivan Dugic</name>
-        	<email>idugic@gmail.com</email>
-        	<roles>
-        		<role>core-implementations</role>
-        	</roles>
-        </contributor>
-        <contributor>
-            <name>Peter Ertl</name>
-            <roles>
-                <role>maven-support</role>
-            </roles>
-        </contributor>
-        <contributor>
-            <name>Robin Stocker</name>
-            <email>robin@nibor.org</email>
-            <roles>
-                <role>git-support</role>
-                <role>scala-support</role>
-            </roles>
-        </contributor>
-        <contributor>
-            <name>Sander Plas</name>
-            <email>sander.plas@gmail.com</email>
-            <roles>
-                <role>maven-support</role>
-            </roles>
-        </contributor>
-        <contributor>
-            <name>Sergey Epik</name>
-            <email>sergey.epik@gmail.com</email>
-            <roles>
-                <role>spring-support</role>
-            </roles>
-        </contributor>
-        <contributor>
-        	<name>Sugiharto Lim</name>
-        	<email>truesaint@gmail.com</email>
-        	<roles>
-        		<role>firebird-support</role>
-        	</roles>	
-       	</contributor>
-    </contributors>
-
-    <modules>
-        <module>jOOQ</module>
-        <module>jOOQ-codegen</module>
-        <module>jOOQ-codegen-maven</module>
-        <!--<module>jOOQ-codegen-maven-example</module>-->
-        <module>jOOQ-console</module>
-        <module>jOOQ-meta</module>
-        <module>jOOQ-scala</module>
-    </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-codegen</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-codegen-maven</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-codegen-maven-example</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-console</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-meta</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-scala</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <defaultGoal>deploy</defaultGoal>
-        <finalName>${project.artifactId}-${project.version}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <fork>true</fork>
-                    <maxmem>512m</maxmem>
-                    <meminitial>256m</meminitial>
-                    <encoding>UTF-8</encoding>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <debug>true</debug>
-                    <debuglevel>lines,vars,source</debuglevel>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <inherited>true</inherited>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.1.2</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <excludeResources>true</excludeResources>
-                    <useDefaultExcludes>true</useDefaultExcludes>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.8</version>
-                <configuration>
-                    <downloadSources>true</downloadSources>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <artifactId>collect-android-jooq</artifactId>
+    <packaging>jar</packaging>
+    <name>jOOQ for Android</name>
 
     <profiles>
-        <!-- The release profile is used only for releasing jOOQ to
-             the Sonatype Maven repository or to Maven central
-             lengthy or annoying operations for everyday use by users
-             building jOOQ themselves are put here -->
         <profile>
             <id>release</id>
             <build>
@@ -241,7 +23,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.1</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -252,30 +33,75 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <inherited>true</inherited>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.7</version>
-                        <executions>
-                            <execution>
-                                <id>bundle-sources</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <maxmemory>512</maxmemory>
-                            <encoding>UTF-8</encoding>
-                            <show>protected</show>
-                            <notree>true</notree>
-                        </configuration>
-                    </plugin>
                 </plugins>
             </build>
         </profile>
     </profiles>
 
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+            <type>jar</type>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+            <type>jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jmock</groupId>
+            <artifactId>jmock-junit4</artifactId>
+            <version>2.5.1</version>
+            <type>jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>integration</artifactId>
+            <version>1.6.1</version>
+            <type>jar</type>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.1</version>
+            <type>jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Alpha1</version>
+            <type>jar</type>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <!--  Added for Android -->
+        <dependency>
+        	<groupId>org.openforis.collect.android</groupId>
+        	<artifactId>collect-android-jpa</artifactId>
+        	<version>3.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.openforis.collect.android</groupId>
+        	<artifactId>collect-android-jaxb</artifactId>
+        	<version>3.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
